@@ -33,7 +33,13 @@ function checkDuplicate() {
   /* ⚠️ You need to add code to this function! ⚠️*/
 
   const itemText = itemInput.value;
-  listArr.push(itemText);
+
+  const trimmedText = itemText.trim().replace(/\s{2,}/g, " ");
+  console.log(trimmedText);
+
+  if (!listArr.includes(trimmedText)) {
+    listArr.push(itemText);
+  }
   renderList();
 }
 
