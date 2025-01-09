@@ -34,10 +34,14 @@ function checkDuplicate() {
 
   const itemText = itemInput.value;
 
+  //this will remove space from begininng and end and replace more than 2 spaces with single space
   const trimmedText = itemText.trim().replace(/\s{2,}/g, " ");
-  console.log(trimmedText);
 
-  if (!listArr.includes(trimmedText)) {
+  const isDuplicated = listArr.some(
+    (item) => item.lowerCase() === trimmedText.lowerCase()
+  );
+
+  if (!isDuplicated) {
     listArr.push(itemText);
   }
   renderList();
