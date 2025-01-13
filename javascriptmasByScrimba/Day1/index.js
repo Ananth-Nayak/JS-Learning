@@ -38,7 +38,7 @@ function checkDuplicate() {
   const trimmedText = itemText.trim().replace(/\s{2,}/g, " ");
 
   const isDuplicated = listArr.some(
-    (item) => item.lowerCase() === trimmedText.lowerCase()
+    (item) => item.toLowerCase() === trimmedText.toLowerCase()
   );
 
   if (!isDuplicated) {
